@@ -1,0 +1,234 @@
+/* Đặt lại các giá trị mặc định của trình duyệt */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f8ff;
+  text-align: center;
+}
+
+h1 {
+  color: #ff1493;
+  font-size: 2.5rem; /* Kích thước chữ lớn */
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem; /* Kích thước chữ vừa phải */
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ac6a8d;
+}
+
+/* Đảm bảo giao diện hoạt động tốt trên màn hình nhỏ hơn */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+:root {
+  --bg1: #fff0f6;
+  --bg2: #ffeef8;
+  --accent1: #ff66a3;
+  --accent2: #ff9cc2;
+  --card-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --text-dark: #3b2240;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body.page {
+  margin: 0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+      600px 300px at 10% 15%,
+      rgba(255, 150, 200, 0.12),
+      transparent 20%
+    ),
+    radial-gradient(
+      500px 220px at 90% 85%,
+      rgba(255, 220, 240, 0.1),
+      transparent 18%
+    ),
+    linear-gradient(135deg, var(--bg1) 0%, #fff 12%, var(--bg2) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* decorative blurred floral blobs */
+body.page::before,
+body.page::after {
+  content: "";
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(38px);
+  transform: rotate(12deg);
+  z-index: 0;
+  opacity: 0.9;
+}
+body.page::before {
+  left: -12%;
+  top: -8%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 200, 220, 0.55),
+    rgba(255, 160, 200, 0.18) 40%,
+    transparent 60%
+  );
+}
+body.page::after {
+  right: -10%;
+  bottom: -6%;
+  background: radial-gradient(
+    circle at 70% 70%,
+    rgba(200, 220, 255, 0.45),
+    rgba(220, 200, 255, 0.12) 35%,
+    transparent 60%
+  );
+}
+
+/* center card */
+.card {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 36px 44px;
+  border-radius: 20px;
+  background: var(--card-bg);
+  box-shadow: 0 10px 30px rgba(95, 40, 80, 0.12);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(6px) saturate(120%);
+  -webkit-backdrop-filter: blur(6px) saturate(120%);
+  max-width: 420px;
+  width: 90%;
+}
+
+/* headings */
+.card h1 {
+  margin: 6px 0;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  font-size: 30px;
+  background: linear-gradient(90deg, var(--accent1), var(--accent2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 6px 20px rgba(255, 150, 190, 0.12);
+}
+.card .subtitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(59, 34, 64, 0.9);
+  margin-bottom: 18px;
+}
+
+/* button */
+#flower-button {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  padding: 12px 20px;
+  font-weight: 700;
+  border-radius: 12px;
+  background-image: linear-gradient(90deg, #ff67a3, #ff9cc2);
+  color: white;
+  box-shadow: 0 8px 20px rgba(255, 120, 165, 0.18);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  font-size: 15px;
+}
+#flower-button:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(255, 120, 165, 0.22);
+}
+#flower-button:active {
+  transform: translateY(-1px) scale(0.995);
+}
+
+/* small decorative floral dots around card */
+.card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+      circle at 10% 20%,
+      rgba(255, 200, 220, 0.18) 0 6px,
+      transparent 7px
+    ),
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(255, 230, 240, 0.12) 0 5px,
+      transparent 6px
+    ),
+    radial-gradient(
+      circle at 40% 92%,
+      rgba(220, 240, 255, 0.1) 0 8px,
+      transparent 9px
+    );
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
+/* responsive tweaks */
+@media (max-width: 420px) {
+  .card {
+    padding: 28px 20px;
+    border-radius: 16px;
+  }
+  .card h1 {
+    font-size: 24px;
+  }
+  .card .subtitle {
+    font-size: 15px;
+  }
+}
